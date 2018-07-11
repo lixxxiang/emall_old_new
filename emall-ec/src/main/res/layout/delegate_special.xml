@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <View
+        android:id="@+id/ll_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusbar_view_height"
+        android:background="#FFFFFF"
+        android:elevation="2dp" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/special_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_below="@+id/ll_bar"
+        android:background="#FFFFFF"
+        android:elevation="2dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="@string/special"
+            android:textColor="#686868"
+            android:textSize="18dp" />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/special_srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/special_toolbar">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/special_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/special_no_network_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/no_internet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/no_internet" />
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_internet"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/click_to_reload" />
+    </RelativeLayout>
+</RelativeLayout>

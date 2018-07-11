@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/classify_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/classify_ctl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="60dp"
+            app:layout_collapseParallaxMultiplier="1.0"
+            app:expandedTitleMarginStart="48dp"
+            app:scrimAnimationDuration="200"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/main.backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header_bg"
+                app:layout_collapseMode="pin"
+                app:layout_collapseParallaxMultiplier="0.5" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/classify_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginTop="20dp"
+                app:layout_collapseMode="pin"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:navigationIcon="@drawable/ic_back_small">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/classify_toolbar_search_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/ic_search" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <com.example.emall_core.util.view.MyNestedScrollView
+        android:id="@+id/classify_sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <RelativeLayout
+            android:id="@+id/classify_introduction_root_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/classify_introduction_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/classify_compasses_iv"
+                    android:layout_width="13dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/compasses" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/classify_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/classify_compasses_iv"
+                    android:textColor="#B4A078"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/classify_introduction_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/classify_compasses_iv"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#9B9B9B"
+                    android:textSize="12dp" />
+                <RelativeLayout
+                    android:id="@+id/classify_space_rl"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="6dp"
+                    android:background="#F0F0F0" />
+            </RelativeLayout>
+
+
+
+
+            <!--recommand-->
+            <RelativeLayout
+                android:id="@+id/classify_horizontal_scrollview_ll"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/classify_introduction_rl"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                tools:ignore="NotSibling">
+
+                <RelativeLayout
+                    android:id="@+id/classify_recommand_rl"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="60dp"
+                    android:background="#FFFFFF"
+                    android:layout_height="match_parent">
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/classify_recommand_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/recommand"
+                        android:textColor="#B80017"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+                <HorizontalScrollView
+                    android:layout_toRightOf="@+id/classify_recommand_rl"
+                    android:layout_toLeftOf="@+id/classify_down_btn_rl"
+                    android:id="@+id/classify_hsv"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/classify_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <RelativeLayout
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/classify_down_btn_rl"
+                    android:layout_width="47dp"
+                    android:background="#FFFFFF"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/classify_down_btn"
+                        android:layout_width="15dp"
+                        android:layout_height="9dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/down" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#DADADA" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:id="@+id/recommand_mask" />
+            </RelativeLayout>
+
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/classify_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_below="@+id/classify_horizontal_scrollview_ll" />
+            <ProgressBar
+                android:id="@+id/classify_progressBar"
+                android:layout_width="36dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:indeterminateTint="#B4A078"
+                android:indeterminateTintMode="src_atop"
+                android:layout_below="@+id/classify_horizontal_scrollview_ll"
+                android:layout_height="36dp" />
+            <RelativeLayout
+                android:id="@+id/bottom_rl"
+                android:visibility="gone"
+                android:layout_below="@+id/classify_rv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#FFFFFF"
+                android:minHeight="50dp">
+
+                <android.support.v4.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <RelativeLayout
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <ProgressBar
+                        android:id="@+id/pull_to_refresh_load_progress"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true" android:indeterminateTint="#B4A078"
+                        android:indeterminateTintMode="src_atop"
+                        android:layout_marginLeft="0dp"
+                        android:indeterminate="true" />
+                    <TextView
+                        android:id="@+id/item_load_tv"
+                        android:layout_toRightOf="@+id/pull_to_refresh_load_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_centerVertical="true"
+                        android:text="@string/loading"
+                        android:textColor="#5C5C5C"
+                        android:textSize="14dp"/>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/classify_mask_rl"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/classify_horizontal_scrollview_ll"
+                android:clickable="true"
+                android:focusable="true">
+                <GridView
+                    android:background="#FFFFFF"
+                    android:id="@+id/classify_gv"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:numColumns="4"/>
+                <RelativeLayout
+                    android:layout_below="@+id/classify_gv"
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#80000000" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </com.example.emall_core.util.view.MyNestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

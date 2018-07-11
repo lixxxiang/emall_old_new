@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:id="@+id/ll_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusbar_view_height"
+        android:background="#FFFFFF"
+        android:elevation="2dp" />
+    <android.support.v7.widget.Toolbar
+        android:elevation="2dp"
+        android:id="@+id/daily_pic_toolbar"
+        android:layout_width="match_parent"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF">
+        <!--<android.support.v7.widget.AppCompatTextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="@string/star_journey"-->
+            <!--android:textColor="#686868"-->
+            <!--android:textSize="16dp" />-->
+    </android.support.v7.widget.Toolbar>
+    <com.example.emall_core.util.view.SwipeRefreshView
+        android:id="@+id/daily_pic_srv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/daily_pic_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="2px"
+            android:scrollbars="none"
+            android:divider="@drawable/list_item_divider_5"
+            android:layout_below="@+id/banner" />
+    </com.example.emall_core.util.view.SwipeRefreshView>
+</LinearLayout>

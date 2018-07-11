@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:id="@+id/lll_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusbar_view_height"
+        android:background="#FFFFFF"
+        android:elevation="2dp" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/pay_method_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@+id/lll_bar"
+        android:background="#FFFFFF"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        android:elevation="2dp">
+
+        <!--<TextView-->
+            <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="@string/choose_pay_method"-->
+            <!--android:textColor="#686868"-->
+            <!--android:textSize="14dp" />-->
+    </android.support.v7.widget.Toolbar>
+    <com.example.emall_core.util.view.BounceScrollView
+        android:layout_below="@+id/pay_method_toolbar"
+        android:layout_width="match_parent"
+        android:id="@+id/pay_method_sv"
+        android:background="#F0F0F0"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:id="@+id/wechat_rl"
+                android:layout_width="match_parent"
+                android:layout_height="53dp">
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/wechat_iv"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp"
+                    android:background="@drawable/checked"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/wechat"
+                    android:layout_marginLeft="59dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dp"
+                    android:text="@string/wechat_pay"
+                    android:textColor="#5C5C5C"
+                    android:textSize="12dp" />
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/wechat_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00000000"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/public_rl"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#E0E0E0"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="53dp">
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/public_iv"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp"
+                    android:background="@drawable/unchecked"/>
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/to_public"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="59dp"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="#5C5C5C"
+                    android:text="@string/to_public"
+                    />
+                    />
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/public_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00000000"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+                <!--<android.support.v7.widget.AppCompatImageView-->
+                    <!--android:layout_width="24dp"-->
+                    <!--android:layout_height="21dp"-->
+                    <!--android:background="@drawable/wechat"-->
+                    <!--android:layout_centerVertical="true"/>-->
+
+
+
+
+
+
+    </com.example.emall_core.util.view.BounceScrollView>
+
+    <RelativeLayout
+        android:id="@+id/pay_method_pay_rl"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#B80017"
+        android:layout_marginBottom="13dp">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm"
+            android:layout_centerInParent="true"
+            android:textSize="12dp"
+            android:textColor="#FFFFFF"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/back_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0F0F0"
+        android:visibility="gone">
+    </RelativeLayout>
+</RelativeLayout>

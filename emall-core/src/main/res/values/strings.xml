@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">emall-core</string>
+    <string name="close">&#xe66e;</string>
+    <string name="hide">&#xe69f;</string>
+    <string name="show">&#xe6bb;</string>
+    <string name="foward">&#xe623;</string>
+    <string name="back">&#xe682;</string>
+    <string name="tel">&#xe61b;</string>
+    <string name="qq">&#xe63c;</string>
+    <string name="search">&#xe7b7;</string>
+    <string name="down">&#xe627;</string>
+    <string name="scan">&#xe61a;</string>
+    <string name="eye">&#xe60d;</string>
+    <string name="headset">&#xe641;</string>
+    <string name="star">&#xe672;</string>
+
+    <string name="every_day_pic">每日一图</string>
+    <string name="guess_like">猜你喜欢</string>
+    <string name="sure">确定</string>
+</resources>
